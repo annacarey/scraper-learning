@@ -25,10 +25,15 @@ us_gross = []
 movie_div = soup.find_all('div', class_='lister-item mode-advanced')
 
 for movie_container in movie_div:
+
+    # Add title
     title = movie_container.h3.a.text
     titles.append(title)
 
+    # Add year
+    year = movie_container.h3.find('span', class_='lister-item-year text-muted unbold').text[1:-1]
+    years.append(year)
 
 
-print(titles)
+print(years)
 
