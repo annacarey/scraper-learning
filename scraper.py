@@ -13,4 +13,22 @@ results = requests.get(url, headers=headers)
 
 soup = BeautifulSoup(results.text, "html.parser")
 
-print(soup.prettify())
+# Empty lists to store the data
+titles = []
+years = []
+time = []
+imdb_ratings = []
+metascores = []
+votes = []
+us_gross = []
+
+movie_div = soup.find_all('div', class_='lister-item mode-advanced')
+
+for movie_container in movie_div:
+    title = movie_container.h3.a.text
+    titles.append(title)
+
+
+
+print(titles)
+
