@@ -16,7 +16,7 @@ soup = BeautifulSoup(results.text, "html.parser")
 # Empty lists to store the data
 titles = []
 years = []
-time = []
+lengths = []
 imdb_ratings = []
 metascores = []
 votes = []
@@ -34,6 +34,10 @@ for movie_container in movie_div:
     year = movie_container.h3.find('span', class_='lister-item-year text-muted unbold').text[1:-1]
     years.append(year)
 
+    # Add length of movie
+    movie_length = movie_container.find('p', class_='text-muted').find('span', class_='runtime').text
+    lengths.append(movie_length)
 
-print(years)
+
+print(lengths)
 
