@@ -1,11 +1,14 @@
+# Tutorial: https://medium.com/better-programming/the-only-step-by-step-guide-youll-need-to-build-a-web-scraper-with-python-e79066bd895a
+
 import requests
 from requests import get
 from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 
-headers = {"Accept-Language": "en-US, en;q=0.5"}
+# Following this tutorial
 
+headers = {"Accept-Language": "en-US, en;q=0.5"}
 
 url = "https://www.imdb.com/search/title/?groups=top_1000&ref_=adv_prv"
 
