@@ -35,9 +35,15 @@ for movie_container in movie_div:
     years.append(year)
 
     # Add length of movie
-    movie_length = movie_container.find('p', class_='text-muted').find('span', class_='runtime').text
+    movie_length = movie_container.find('span', class_='runtime').text
     lengths.append(movie_length)
 
+    # 
+    # Add votes
+    vote_count = movie_container.find('p', class_='sort-num_votes-visible').find_all('span')[1].text
+    votes.append(vote_count)
 
-print(lengths)
+
+
+print(votes)
 
