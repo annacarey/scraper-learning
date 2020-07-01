@@ -38,12 +38,23 @@ for movie_container in movie_div:
     movie_length = movie_container.find('span', class_='runtime').text
     lengths.append(movie_length)
 
-    # 
+    # Add imdb rating
+    imdb_rating = float(movie_container.strong.text)
+    imdb_ratings.append(imdb_rating)
+
+    # Add metascores
+    metascore = int(movie_container.find('span', class_='metascore').text)
+    metascores.append(metascore)
+    
     # Add votes
     vote_count = movie_container.find('p', class_='sort-num_votes-visible').find_all('span')[1].text
     votes.append(vote_count)
 
+    #Add US gross
+    gross = movie_container.find('p', class_='sort-num_votes-visible').find_all('span')[4].text if len(movie_container.find('p', class_='sort-num_votes-visible').find_all('span'))>2 else '-'
+    us_gross.append(gross)
 
 
-print(votes)
+
+print(us_gross)
 
