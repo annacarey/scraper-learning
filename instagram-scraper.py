@@ -1,6 +1,5 @@
 # Tutorial: https://medium.com/swlh/tutorial-web-scraping-instagrams-most-precious-resource-corgis-235bf0389b0c
 
-import pandas as pd
 import time
 from selenium.webdriver import Chrome
 
